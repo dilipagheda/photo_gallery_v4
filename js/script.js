@@ -5,9 +5,10 @@ $("#search").keyup(function(){
   var $images = $("section div img");
   $images.each(function(e){
     let captionName = $( this ).attr("data-caption");
-
-    if(captionName.toLowerCase().startsWith(searchPhrase.toLowerCase())){
+    if(captionName.toLowerCase().includes(searchPhrase.toLowerCase())){
       isFound = true;
+      console.log(captionName);
+
       $(this).parent().css("display","block");
     }else{
       $(this).parent().css("display","none");
@@ -25,5 +26,6 @@ $("#search").keyup(function(){
 
 //ligtbox code
 lightbox.option({
-      'showImageNumberLabel': false
+      'showImageNumberLabel': false,
+      'fitImagesInViewport' : true
     });

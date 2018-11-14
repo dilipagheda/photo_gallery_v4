@@ -40,23 +40,10 @@ section {
 }
 
 /* override properties of lightbox */
-.lightboxOverlay {
-  background-color: black;
-  opacity: 0.9;
-}
 .lb-nav a.lb-prev, .lb-nav a.lb-next {
   opacity: 1;
 }
-.lb-nav a.lb-next {
-  position: fixed;
-  right: 10%;
-  top: 0;
-}
-.lb-nav a.lb-prev {
-  position: fixed;
-  left: 10%;
-  top: 0;
-}
+
 .lb-data .lb-details {
   text-align: center;
   width: 100%;
@@ -64,9 +51,21 @@ section {
 .lb-data .lb-close {
   display: none;
 }
+#lightboxOverlay {
+  width:100% !important;
+}
+.lb-outerContainer, .lb-container,  .lb-image, .lb-dataContainer{
+  width:100% !important;
+  height: auto !important;
+}
+
+
+
 /* tablet */
 @media (min-width:481px){
-
+  .lb-outerContainer{
+    width:90% !important
+  }
   .search-box div  {
     width:50%;
   }
@@ -77,6 +76,19 @@ section {
 
 /* laptops */
 @media (min-width:992px){
+  .lb-outerContainer{
+    width:70% !important
+  }
+  .lb-nav a.lb-next {
+    position: fixed;
+    right: 10%;
+    top: 0;
+  }
+  .lb-nav a.lb-prev {
+    position: fixed;
+    left: 10%;
+    top: 0;
+  }
   .search-box div {
     width:35%;
   }
@@ -87,6 +99,7 @@ section {
 
 /* Desktop */
 @media (min-width:1200px){
+
   section {
     grid-template-columns:  auto auto auto auto;
     max-width: 1100px;
